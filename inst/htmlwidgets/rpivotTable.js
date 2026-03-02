@@ -51,10 +51,10 @@ HTMLWidgets.widget({
               if (!isNaN(val)) {
                 return total += val;
               }
-            }
-          },
-          value: function() { return total; },
-          format: function() { return x; }
+            },
+			value: function() { return total; },
+            format: function() { return x; }
+          }
         }
       }
       x.options.aggregators = $.extend(
