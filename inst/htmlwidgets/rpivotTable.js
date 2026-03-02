@@ -61,7 +61,7 @@ HTMLWidgets.widget({
         {},
         $.pivotUtilities.aggregators,
         {
-          "Weighted Sum": weightedSum();
+          "Weighted Sum": weightedSum()
         }
       )
       // End of edits
