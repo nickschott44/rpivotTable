@@ -48,7 +48,7 @@ HTMLWidgets.widget({
                 var val = parseFloat(record[weightCol])
               }
               if (!isNaN(val)) {
-                return += val
+                return total += val
               }
             }
           },
