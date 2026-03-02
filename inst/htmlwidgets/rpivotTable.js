@@ -47,17 +47,17 @@ HTMLWidgets.widget({
             push: function(record) {
               if (weightCol) {
                 var val = parseFloat(record[weightCol]);
-              }
-              if (!isNaN(val)) {
-                return total += val;
+				if (!isNaN(val)) {
+                  total += val;
+                }
               }
             },
 			value: function() { return total; },
-            format: function() { return x; }
+            format: function(value) { return value; }
           }
         }
       }
-      x.options.aggregators = $.extend(
+      x.params.aggregators = $.extend(
         {},
         $.pivotUtilities.aggregators,
         {
