@@ -31,12 +31,13 @@ HTMLWidgets.widget({
 
       // Start of edits
       // var weightCol = x.weightCol
-      var weightCol = null
+      var weightCol = null;
       if (x.data.length > 0) {
+		  console.log(x.data[0]);
           if ("WPFINWGT" in x.data[0]) {
-            weightCol = "WPFINWGT"
+            weightCol = "WPFINWGT";
           } else if ("Final person weight" in x.data[0]) {
-            weightCol = "Final person weight"
+            weightCol = "Final person weight";
           }
       }
       var weightedSum = function() {
@@ -45,10 +46,10 @@ HTMLWidgets.widget({
           return {
             push: function(record) {
               if (weightCol) {
-                var val = parseFloat(record[weightCol])
+                var val = parseFloat(record[weightCol]);
               }
               if (!isNaN(val)) {
-                return total += val
+                return total += val;
               }
             }
           },
@@ -60,7 +61,7 @@ HTMLWidgets.widget({
         {},
         $.pivotUtilities.aggregators,
         {
-          "Weighted Sum": weightedSum()
+          "Weighted Sum": weightedSum();
         }
       )
       // End of edits
