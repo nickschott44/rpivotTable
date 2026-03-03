@@ -40,7 +40,7 @@ HTMLWidgets.widget({
             weightCol = "Final person weight";
           }
       }
-      var weightedSum = function() {
+      var weightedSum = function(vals) {
         return function(data, rowKey, colKey) {
           var total = 0;
           return {
@@ -61,7 +61,7 @@ HTMLWidgets.widget({
         {},
         $.pivotUtilities.aggregators,
         {
-          "Weighted Sum": weightedSum()
+          "Weighted Sum": weightedSum
         }
       )
       // End of edits
