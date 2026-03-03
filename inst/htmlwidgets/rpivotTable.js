@@ -59,13 +59,21 @@ HTMLWidgets.widget({
           }
         }
       }
-      x.params.aggregators = $.extend(
+      /* x.params.aggregators = $.extend(
         {},
         $.pivotUtilities.aggregators,
         {
           "Weighted Sum": weightedSum
         }
-      )
+      ) */
+	  x.params.aggregators = {
+		  "Unweighted" : $.pivotUtilties.aggregators["Count"],
+		  "Weighted" : weightedSum,
+		  "Sum" : $.pivotUtilities.aggregators["Sum"],
+		  "Count as Fraction of Columns" : $.pivotUtilities.aggregators["Count as Fraction of Columns"],
+		  "Count as Fraction of Rows" : $.pivotUtilities.aggregators["Count as Fraction of Rows"],
+		  "Count as Fraction of Total" : $.pivotUtilities.aggregators["Count as Fraction of Total"]
+	  }
       // End of edits
 		
       $('#'+el.id).pivotUI(x.data, x.params, true, x.locale);
