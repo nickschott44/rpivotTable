@@ -53,7 +53,9 @@ HTMLWidgets.widget({
               }
             },
 			value: function() { return total; },
-            format: function(value) { return value; }
+            format: $.pivotUtilities.numberFormat({
+				digitsAfterDecimal: 2
+			});
           }
         }
       }
