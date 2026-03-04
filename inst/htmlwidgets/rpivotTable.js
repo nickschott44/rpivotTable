@@ -30,6 +30,14 @@ HTMLWidgets.widget({
       }
 
       // Start of edits
+	  var weightCol = null;
+	  if (x.weightCol && x.data.length > 0) {
+		  if (x.weightCol in x.data[0]) {
+			  weightCol = x.weightCol;
+		  } else {
+    		  console.warn("weightCol not found in data:", x.weightCol);
+  		  }
+	  }
       var weightCol = x.weightCol
 		
       /*var weightCol = null;
