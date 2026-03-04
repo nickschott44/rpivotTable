@@ -59,24 +59,25 @@ HTMLWidgets.widget({
           }
         }
       }
-      /* x.params.aggregators = $.extend(
+      /* Previous code for modifying aggregators
+	  x.params.aggregators = $.extend(
         {},
         $.pivotUtilities.aggregators,
         {
           "Weighted Sum": weightedSum
         }
       ) */
-	  console.log($.pivotUtilities);
-	  if ($.pivotUtilities && $.pivotUtilities.aggregators) {
-		  x.params.aggregators = {
-		  	"Unweighted" : $.pivotUtilties.aggregators["Count"],
-		  	"Weighted" : weightedSum,
-		  	"Sum" : $.pivotUtilities.aggregators["Sum"],
-		  	"Count as Fraction of Columns" : $.pivotUtilities.aggregators["Count as Fraction of Columns"],
-		  	"Count as Fraction of Rows" : $.pivotUtilities.aggregators["Count as Fraction of Rows"],
-		  	"Count as Fraction of Total" : $.pivotUtilities.aggregators["Count as Fraction of Total"]
-	      }
+	  var pivotAgg = $.pivotUtilities.aggregators;
+		
+	  x.params.aggregators = {
+		"Unweighted" : $.pivotUtilties.aggregators["Count"],
+		"Weighted" : weightedSum,
+		"Sum" : $.pivotUtilities.aggregators["Sum"],
+		"Count as Fraction of Columns" : $.pivotUtilities.aggregators["Count as Fraction of Columns"],
+		"Count as Fraction of Rows" : $.pivotUtilities.aggregators["Count as Fraction of Rows"],
+		"Count as Fraction of Total" : $.pivotUtilities.aggregators["Count as Fraction of Total"]
 	  }
+	  x.params.aggregatorName = "Unweighted"
       // End of edits
 		
       $('#'+el.id).pivotUI(x.data, x.params, true, x.locale);
