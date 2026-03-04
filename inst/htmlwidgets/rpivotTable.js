@@ -31,6 +31,10 @@ HTMLWidgets.widget({
 
       // Start of edits
       // var weightCol = x.weightCol
+	  if (!x.params) {
+		  x.params = {};
+	  }
+		
       var weightCol = null;
       if (x.data.length > 0) {
 		  console.log(x.data[0]);
