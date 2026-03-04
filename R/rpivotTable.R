@@ -107,7 +107,8 @@ rpivotTable <- function(
     ...,
     width = 800,
     height = 600,
-    elementId = NULL
+    elementId = NULL,
+    weightCol = NULL
 ) {
   # check for data.frame, data.table, or array
   if( length(intersect(class(data),c("data.frame", "data.table", "table","structable", "ftable" ))) == 0 ) {
@@ -160,7 +161,8 @@ rpivotTable <- function(
       width = width,
       height = height,
       elementId = elementId,
-      package = 'rpivotTable'
+      package = 'rpivotTable',
+      weightCol = weightCol
     )
 }
 
