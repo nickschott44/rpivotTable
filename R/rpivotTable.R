@@ -152,7 +152,8 @@ rpivotTable <- function(
       data = data,
       params = params,
       locale = locale,
-      subtotals = subtotals
+      subtotals = subtotals,
+      weightCol = weightCol
     )
 
     htmlwidgets::createWidget(
@@ -161,8 +162,7 @@ rpivotTable <- function(
       width = width,
       height = height,
       elementId = elementId,
-      package = 'rpivotTable',
-      weightCol = weightCol
+      package = 'rpivotTable'
     )
 }
 
