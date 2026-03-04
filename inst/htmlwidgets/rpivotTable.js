@@ -30,14 +30,9 @@ HTMLWidgets.widget({
       }
 
       // Start of edits
-      // var weightCol = x.weightCol
-		/*
-	  if (!x.params) {
-		  x.params = {};
-	  }
-		*/
+      var weightCol = x.weightCol
 		
-      var weightCol = null;
+      /*var weightCol = null;
       if (x.data.length > 0) {
 		  console.log(x.data[0]);
           if ("WPFINWGT" in x.data[0]) {
@@ -45,7 +40,7 @@ HTMLWidgets.widget({
           } else if ("Final person weight" in x.data[0]) {
             weightCol = "Final person weight";
           }
-      }
+      } */
       var weightedSum = function(vals) {
         return function(data, rowKey, colKey) {
           var total = 0;
@@ -65,14 +60,6 @@ HTMLWidgets.widget({
           }
         }
       }
-      /* Previous code for modifying aggregators
-	  x.params.aggregators = $.extend(
-        {},
-        $.pivotUtilities.aggregators,
-        {
-          "Weighted Sum": weightedSum
-        }
-      ) */
 		
 	  x.params.aggregators = {
 		"Unweighted" : $.pivotUtilities.aggregators["Count"],
