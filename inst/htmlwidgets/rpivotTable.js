@@ -31,9 +31,11 @@ HTMLWidgets.widget({
 
       // Start of edits
       // var weightCol = x.weightCol
+		/*
 	  if (!x.params) {
 		  x.params = {};
 	  }
+		*/
 		
       var weightCol = null;
       if (x.data.length > 0) {
@@ -71,17 +73,15 @@ HTMLWidgets.widget({
           "Weighted Sum": weightedSum
         }
       ) */
-	  var pivotAgg = $.pivotUtilities.aggregators;
 		
 	  x.params.aggregators = {
-		"Unweighted" : $.pivotUtilties.aggregators["Count"],
+		"Unweighted" : $.pivotUtilities.aggregators["Count"],
 		"Weighted" : weightedSum,
 		"Sum" : $.pivotUtilities.aggregators["Sum"],
 		"Count as Fraction of Columns" : $.pivotUtilities.aggregators["Count as Fraction of Columns"],
 		"Count as Fraction of Rows" : $.pivotUtilities.aggregators["Count as Fraction of Rows"],
 		"Count as Fraction of Total" : $.pivotUtilities.aggregators["Count as Fraction of Total"]
 	  }
-	  x.params.aggregatorName = "Unweighted"
       // End of edits
 		
       $('#'+el.id).pivotUI(x.data, x.params, true, x.locale);
